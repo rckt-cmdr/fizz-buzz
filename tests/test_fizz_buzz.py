@@ -28,7 +28,7 @@ def test_2_OutputEqualsBuzz():
 
 def test_3_OutputEqualsFizzBuzz():
     pass
-    # if input is multiple of 3 or 5, output is "FizzBuzz"
+    # if input is multiple of 3 and 5, output is "FizzBuzz"
 
 def test_4_OutputEqualsInput():
     pass

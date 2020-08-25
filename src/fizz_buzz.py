@@ -9,4 +9,13 @@
 def evaluate(inputValue):
     result = None
 
-    if 
+    if inputValue % 3 == 0 and inputValue % 5 == 0:
+        result = "FizzBuzz"
+    elif inputValue % 3 == 0:
+        result = "Fizz"
+    elif inputValue % 5 == 0:
+        result = "Buzz"
+    else:
+        result = str(inputValue)
+
+    return result
