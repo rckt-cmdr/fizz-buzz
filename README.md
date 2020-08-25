@@ -1,5 +1,5 @@
 # fizz-buzz
-Just a programming challenge - https://edabit.com/challenge/WXqH9qvvGkmx4dMvp
+*Just a programming challenge - https://edabit.com/challenge/WXqH9qvvGkmx4dMvp*
 
 Create a function that takes a number as an argument and returns `"Fizz"`, `"Buzz"` or `"FizzBuzz"`.
 
