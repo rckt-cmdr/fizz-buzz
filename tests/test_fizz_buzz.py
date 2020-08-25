@@ -6,30 +6,37 @@
 # Reference: https://edabit.com/challenge/WXqH9qvvGkmx4dMvp
 
 
-import pytest
+import unittest
 from src import fizz_buzz
 
 
-@pytest.fixture
-def inputValues():
-    return [3, 5, 6, 9, 10, 12, 15, 18, 20, 21, 24, 25]
+class TestFizzBuzz(unittest.TestCase):
 
-def test_1_OutputEqualsFizz(inputValues):
-    # if input is a multiple of 3, output is "Fizz"
-    
-    for value in inputValues:
-        result = fizz_buzz.evaluate(value)
-        assert result is type(str) , "Result should be a string"
-        assert result == "Fizz",  "Result should be 'Fuzz'"
+    def setUp(self):
+        self.multiplesOfThree = [3, 6, 9, 12]  # specific values that are *only* multiples of 3
+        self.multiplesOfFive = [5, 10, 20, 25]  # specific values that are *only* multiples of 5
+        self.multiplesOfThreeAndFive = [15, 30, 45, 60]  # specific values that are *only* multiples of both 3 *and* 5
 
-def test_2_OutputEqualsBuzz():
-    pass
-    # if input is a multiple of 5, output is "Buzz"
+    def test_1_OutputEqualsFizz(self):
+        # if input is a multiple of 3, output is "Fizz"
+        
+        for value in self.multiplesOfThree:
+            result = fizz_buzz.evaluate(value)
+            self.assertIsInstance(result, str)
+            self.assertEquals(result, "Fizz")
 
-def test_3_OutputEqualsFizzBuzz():
-    pass
-    # if input is multiple of 3 and 5, output is "FizzBuzz"
+    def test_2_OutputEqualsBuzz(self):
+        pass
+        # if input is a multiple of 5, output is "Buzz"
 
-def test_4_OutputEqualsInput():
-    pass
-    # if input is NOT a multiple of 3 or 5, output is same as input
+    def test_3_OutputEqualsFizzBuzz(self):
+        pass
+        # if input is multiple of 3 and 5, output is "FizzBuzz"
+
+    def test_4_OutputEqualsInput(self):
+        pass
+        # if input is NOT a multiple of 3 or 5, output is same as input
+
+
+if __name__ == "__main__":
+    unittest.main()
